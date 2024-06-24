@@ -1,0 +1,287 @@
+
+
+/* nomarlizacion */
+*{
+    padding: 0;
+    margin: 0;
+    /* Esto mantiene el alto y el ancho sin contar el pading ni el margen */
+    box-sizing: border-box;
+    /* Quitar los puntos y decoracion de las listas  */
+    list-style: none;
+    /* Esto quita el subrallado de los enlaces */
+    text-decoration: none;
+    color: white;
+}
+
+
+header{
+    /* Esto hace que el heder quede fijo arriba */
+    position: fixed;
+    right: 0;
+    top:0;
+    /* Esto hace que el heder quede por encima */
+    z-index: 100;
+    width: 100%;
+    /* Esto hara que los elementos se pongan en linea */
+    display: flex; 
+    /* Centra verticalmente */
+    align-items: center; 
+    /* que los elementos se separen */
+    justify-content: space-between;
+    padding: 10px 3%;
+    background-color: transparent;
+}
+
+body{
+    /* todo */
+background-color: rgb(0, 0, 0); 
+}
+
+.Logo{
+    font-size: 30px;
+    font-weight: 800;
+}
+
+.Navlist{
+    /* Esto esirve para que los elementos del ul se pongan en linea */
+    display: flex; 
+}
+
+.Navlist a{
+    margin-left: 60px; /*Es para separar las palabras*/
+    font-size: 15px;
+    font-weight: 600; 
+    border-bottom: 2px solid transparent; /*Esto es un subrallado traparenta*/
+    transition: all .5s ease;
+}
+
+.Navlist a:hover{
+    border-bottom: 2px solid white; /*Esto es un subrallado que al poner el mause*/
+}
+
+#menu-toggle{
+    display: none;
+}
+
+#menu-icon{
+    display: none;
+  color: white;
+  z-index: 101;
+  cursor: pointer;
+  font-size: 30px;
+
+}
+
+.label-menu{
+    display: none;
+}
+
+.Hero{
+    height: 100%;
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(245.59deg,#31494e 0%, #385e70 25%, #131313 75% ); /*fondo gradiente*/
+    position: relative; /* Para que sea relativo al contenedor*/
+    display: grid; /*para que se pueda dividier en dos columanas*/
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 2rem;
+}
+
+section{
+    padding: 0 8%;
+
+}
+
+.hero-text h5{
+ font-size: 14px;
+ font-weight: 400;
+ margin-bottom: 25px;
+}
+
+.hero-text h1{
+    font-family: "Roboto Mono", monospace;
+    font-size: 50px;
+    line-height: 1;
+    margin: 0 0 30px;
+}
+
+.hero-text p{
+ font-size: 80%;
+ margin-bottom: 40px;
+ line-height: 1.9 ;
+}
+
+.hero-text h4{
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+
+
+.hero-img img{
+ width: 400px;
+ margin: 10% 0 0 10%;
+ height: auto;
+ transition: all 5s linear; /* esto hace que la trancicion sea lineal*/
+ 
+
+}
+
+.hero-text a{
+    display: inline-block;
+    background-color: #4d4d4d;
+    border: 1px solid transparent;
+    padding: 15px 30px;
+    line-height: 1.4;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 38px;
+    text-transform: uppercase;
+    transition:  all .5s ease;
+}
+
+.hero-text a:hover{
+    background-color: transparent;
+    border: solid white;
+    transform: translateX(8px);
+}
+
+.hero-img img:hover{
+  width: 450px;  
+  opacity: 0.6;
+}
+
+.hero-text a.videos{
+    background-color: transparent;
+    border:  1px solid wheat;
+    margin-left:20px ;
+
+}
+
+.hero-text a.videos{
+ vertical-align: middle ;
+ margin-right: 5px;
+}
+
+.icons{
+    position: absolute;
+    top: 50vh ; /*para ver la mitad del height*/
+    padding: 0 3%;
+    transform:  translateY(-50%);
+}
+
+.icons i{
+    display: block;
+    margin:26px 0;
+    font-size: 24px;
+    transition: all .5s ease;
+
+
+}
+
+.icons i:hover{
+    color: #4d4d4d;
+    transform: translateY(-5px);
+}
+
+.scroll-down{
+    position: absolute;
+    bottom: 6%;
+    right: 3%;
+}
+
+.scroll-down i{
+    display: block;
+    padding: 12px;
+    font-size: 25px;
+    background-color: #21383d;
+    border-radius: 30px;
+    transition: all ease;
+}
+
+.scroll-down i:hover{
+    transform: translateY(-5px);
+}
+/*aca vamos a hacer mediaqueris para que la web sea responsive*/
+@media (max-width:882px){
+    section{
+        padding: 0 3%;
+        transition: .2s;
+
+    }
+    .icons{
+        display: none;
+    }
+
+    .hero-text{
+        padding-top: 0;
+    }
+    .hero-img{
+        text-align: center;
+    }
+
+    .hero-img img{
+        width: 80%;
+        margin: 10% 0 10%;
+    }
+    .hero-text{
+        font-size: 70%;
+    }
+    .scroll-down{
+        display: none;
+    }
+}
+
+@media (max-width:734px){
+
+    .label-menu{
+        display: block;
+    }
+
+    #menu-icon{
+        display: block;
+    }
+
+    .hero-text{
+        text-align: center;
+        padding-top: 100px;
+    }
+
+    .hero-img img{
+        margin: 0;
+    }
+
+    .Hero{
+        height: 100%;
+        gap: 1rem;
+        grid-template-columns: 1fr;
+    }
+
+    .Navlist{
+        position: absolute;
+        top: 100%;
+        right: -100%;
+        width: 200px;
+        height: 180px;
+        background-color: #011527bd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 30px 20px;
+        transition: all 1s ease;
+
+    }
+
+    .Navlist a{
+        display: block;
+        margin: 7px 0;
+
+    }
+
+    #menu-toggle:checked+label.label-menu+ul {
+        right: 0;
+
+    }
+}
